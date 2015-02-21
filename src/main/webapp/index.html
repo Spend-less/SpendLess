@@ -1,25 +1,13 @@
-<html>
+<html ng-app="spendless">
 <head>
-    <script src="jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="spendless.js"> </script>
+    <script type="text/javascript" src="angular-resource.min.js"> </script>
 </head>
-<body>
-<input type="button" id="getInfo" value="Load data">
-<script>
-    var button = document.getElementById("getInfo");
-    button.onclick = function() {
-        $.ajax({
-            url: 'http://localhost:8080/spendless/expenses',
-            type: 'GET',
-            dataType: 'json',
-            crossDomain: true,
-            success: function(data) {
-                alert(data);
-            },
-            error: function(data) {
-                alert("error");
-            }
-        });
-    };
-</script>
+<body ng-controller="SpendlessController">
+<!--<div ng-repeat="expense in expensesResult.expenses">-->
+    <!--{{expense.date}}-->
+<!--</div>-->
 </body>
 </html>
