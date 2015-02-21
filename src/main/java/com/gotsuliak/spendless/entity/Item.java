@@ -1,10 +1,22 @@
 package com.gotsuliak.spendless.entity;
 
+import org.springframework.data.annotation.Id;
+
 public class Item {
 
+    @Id
+    private String id;
     private Double price;
     private Double quantity;
     private String name;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Double getPrice() {
         return price;

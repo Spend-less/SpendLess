@@ -1,10 +1,13 @@
 package com.gotsuliak.spendless.entity;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.Date;
 import java.util.List;
 
 public class Expense {
 
+    @Id
     private String id;
     private Date date;
     private String category;
