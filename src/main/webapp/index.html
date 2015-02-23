@@ -1,13 +1,68 @@
+<!DOCTYPE html>
 <html ng-app="spendless">
 <head>
     <script type="text/javascript" src="jquery-1.11.2.js"></script>
     <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="spendless.js"> </script>
-    <script type="text/javascript" src="angular-resource.min.js"> </script>
+    <script type="text/javascript" src="spendless.js"></script>
+    <script type="text/javascript" src="angular-resource.min.js"></script>
+    <script type="text/javascript" src="style/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-3.3.2-dist/css/bootstrap.min.css"/>
 </head>
-<body ng-controller="SpendlessController">
-<!--<div ng-repeat="expense in expensesResult.expenses">-->
-    <!--{{expense.date}}-->
-<!--</div>-->
+<body ng-controller="SpendlessController as spendless">
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form name="addExpenseForm">
+                    <fieldset class="form-group">
+                        <select class="form-control" title="Category">
+                            <option value="Food">Food</option>
+                            <option value="Food">Transportation</option>
+                            <option value="Food">Education</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-control" placeholder="13.75"/>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" rows="2" placeholder="description..."></textarea>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input type="button" value="Clear" class="btn btn pull-right"/>
+                        <input type="submit" value="Submit" class="btn btn-primary pull-right"/>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Date</td>
+                <td>Category</td>
+                <td>Items</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="expense in spendless.exps">
+                <td scope="row">{{expense.id}}</td>
+                <td>{{expense.date}}</td>
+                <td>{{expense.category}}</td>
+                <td>{{expense.items.length}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
 </body>
 </html>
