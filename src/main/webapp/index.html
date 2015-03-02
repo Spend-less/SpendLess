@@ -53,7 +53,7 @@
             <tbody>
             <tr ng-repeat="expense in spendless.exps">
                 <td scope="row">{{expense.id}}</td>
-                <td>{{expense.date}}</td>
+                <td>{{expense.date | date:'MM-dd HH:mm'}}</td>
                 <td>{{expense.category}}</td>
                 <td>{{expense.items.length}}</td>
             </tr>
