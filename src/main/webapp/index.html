@@ -51,7 +51,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="expense in spendless.exps">
+            <tr ng-repeat="expense in spendless.exps" ng-click="showDetails(expense.items)">
                 <td scope="row">{{expense.id}}</td>
                 <td>{{expense.date | date:'MM-dd HH:mm'}}</td>
                 <td>{{expense.category}}</td>
