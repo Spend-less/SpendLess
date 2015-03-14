@@ -15,15 +15,13 @@ public class ExpenseController {
     private ExpenseRepository repository;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = "application/json")
-    public String addExpense(@RequestBody Expense expense) {
-        repository.save(expense);
-        return "success";
+    public Expense addExpense(@RequestBody Expense expense) {
+        return repository.save(expense);
     }
 
     @RequestMapping(value = "/remove/{expenseID}", method = RequestMethod.GET)
-    public String remove(@PathVariable String expenseID) {
+    public void remove(@PathVariable String expenseID) {
         repository.delete(expenseID);
-        return "success";
     }
 
     @RequestMapping(method = RequestMethod.GET)
