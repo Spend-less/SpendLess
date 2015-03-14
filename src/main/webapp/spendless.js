@@ -4,7 +4,7 @@ var spendlessModule = angular.module('spendless', ["ngResource"]);
     spendlessModule.controller('SpendlessController', function($scope, $resource){
         var spendless = this;
         spendless.exps = [];
-        $scope.expenses = $resource('http://localhost:8080/expenses');
+        $scope.expenses = $resource(document.URL + 'expenses');
         var results = $scope.expenses.query(function() {
             spendless.exps = results;
         });

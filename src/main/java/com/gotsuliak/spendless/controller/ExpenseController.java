@@ -42,4 +42,10 @@ public class ExpenseController {
         return repository.findOne(expenseID);
     }
 
+    @RequestMapping(value = "/edit/{expenseID}", method = RequestMethod.POST)
+    public Expense edit(@PathVariable String expenseID, @RequestBody Expense expense) {
+        expense.setId(expenseID);
+        return repository.save(expense);
+    }
+
 }

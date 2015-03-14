@@ -5,6 +5,9 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * {'date':'2015-03-14','category':'Food','items':['price':'3.75','quantity':'3','name':'sausages']}
+ */
 public class Expense {
 
     @Id
