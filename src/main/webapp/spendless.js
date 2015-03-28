@@ -15,5 +15,13 @@ var spendlessModule = angular.module('spendless', ["ngResource"]);
         var results = $scope.expenses.query(function() {
             spendless.exps = results;
         });
+        $scope.save = function(expense) {
+            alert(expense.category);
+            $scope.newExpense = $resource(document.URL + 'expenses/add');
+            var newExpense = new $scope.newExpense();
+            newExpense.category = expense.category;
+            newExpense.name = expense.name;
+            newExpense.$save();
+        };
     })
 })();

@@ -16,6 +16,7 @@ public class ExpenseController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = "application/json")
     public Expense addExpense(@RequestBody Expense expense) {
+        System.out.println(expense);
         return repository.save(expense);
     }
 
