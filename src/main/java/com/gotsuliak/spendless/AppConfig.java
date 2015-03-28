@@ -25,6 +25,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Bean(name = "mongoTemplate")
     MongoTemplate getMongoTemplate() throws UnknownHostException {
-        return new MongoTemplate(new MongoClient("localhost", 27017), "newDB");
+        return new MongoTemplate(new MongoClient("localhost", 27017), "spendlessDB");
     }
 }
